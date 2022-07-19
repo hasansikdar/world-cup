@@ -1,0 +1,53 @@
+/*==========================
+    Google Fonts Poppins
+================================*/
+@import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@400;500;600;700&family=Inter:wght@400;600;700&family=Oswald:wght@400;600;700&family=Poppins:wght@400;500;600&display=swap');
+
+
+
+/* =====================
+    Website map
+    1. header
+       * .header-container
+        1.1 .navigation
+            1. .logo
+            2. .navbar
+
+        1.2 .header-banner
+            1. .banner-content
+            2. .banner-image
+    2. main
+        2.1 company-logo
+            1. logos
+
+        2.2 electric-device
+            1. collection-title
+            2. devices
+        2.3 feature-product
+            1 .product-container
+            2. .product-image
+            3. .product-content
+    3. footer
+        1. container
+         2.social-icons
+===========================*/
+
+
+
+/* ================================
+    Typography
+===================================*/
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    transition:all .2s linear;
+    text-decoration:none;
+    list-style:none;
+}
+ul {
+    list-style:none;
+}
+body {
+    font-family:"Poppins", sans-serif;
+}
