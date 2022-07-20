@@ -5,35 +5,6 @@
 
 
 
-/* =====================
-    Website map
-    1. header
-       * .header-container
-        1.1 .navigation
-            1. .logo
-            2. .navbar
-
-        1.2 .header-banner
-            1. .banner-content
-            2. .banner-image
-    2. main
-        2.1 company-logo
-            1. logos
-
-        2.2 electric-device
-            1. collection-title
-            2. devices
-        2.3 feature-product
-            1 .product-container
-            2. .product-image
-            3. .product-content
-    3. footer
-        1. container
-         2.social-icons
-===========================*/
-
-
-
 /* ================================
     Typography
 ===================================*/
@@ -63,13 +34,14 @@ body {
 /* ================================
   division style
 =========================== */
+
 /* header */
 header{
     margin-top:50px;
 }
 header .container {
     width:90%;
-    background:#1E1E1E;
+    background:linear-gradient(to left ,rgba(0,0,0,0.09), #37003C);
     color:white;
     display:grid;
     grid-template-columns:1fr 1fr;
@@ -78,6 +50,8 @@ header .container {
 }
 .banner-content {
     margin:12%;
+    animation:sliding-bottom .5s linear;
+    animation-delay:.2s;
 }
 .banner-content p {
     margin:20px 0;
@@ -85,12 +59,17 @@ header .container {
 .banner-image {
     display: flex;
     height: 100%;
-    justify-content: center;
-    margin-top:3%;
+    justify-content: space-evenly;
+    margin-top:5%;
     margin-right:5%;
+    animation:sliding-bottom .5s linear;
+    animation-delay:.2s;
 }
 .banner-content h1 {
     font-size:5vw;
+    background: -webkit-linear-gradient(#eee, gray);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     
 }
 .banner-content button {
@@ -104,6 +83,12 @@ header .container {
     color: white;
     text-transform: capitalize;
     border-radius: 5px;
+    opacity:.8;
+    transition:1s;
+    cursor:pointer;
+}
+.banner-content button:hover {
+    box-shadow:inset 30rem 0 0 #093B6C;
 }
 .banner-content a {
     color:white;
@@ -111,6 +96,22 @@ header .container {
 .banner-content i {
     margin-left: 10px;
 }
+
+/* =============================
+    Animation
+=========================================== */
+@keyframes sliding-bottom {
+    from {
+        transform:translateY(-150%);
+    }
+    to {
+        transform:translate(0);
+    }
+}
+
+
+
+
 
 
 /* blogs */
@@ -124,7 +125,7 @@ main .container {
 }
 .short-menu {
     border:1px solid #ADC2CB;
-    background:black;
+    background:#37003C;
     display:flex;
     flex-flow:column;
     align-items:center;
@@ -135,7 +136,7 @@ main .container {
     margin-right:20px;
 }
 .short-menu button {
-    border:1px solid #E8E8E8;
+    border:1px solid #093B6C;
     outline:none;
     font-size:18px;
     border-radius:8px;
@@ -146,11 +147,11 @@ main .container {
     cursor:pointer;
 }
 .short-menu button:hover {
-    box-shadow:inset 30rem 0 0 red;
+    box-shadow:inset 30rem 0 0 #093B6C;
     color:white;
 }
 .short-menu button.active {
-    background:red;
+    background: #093B6C;
     color:white;
     border:none;
 }
@@ -178,6 +179,8 @@ main .container {
     box-shadow:0 0 5px rgba(0,0,0,.1);
     border-radius:5px;
     border:1px solid #E8E8E8;
+    animation:sliding-bottom .5s linear;
+    animation-delay:.2s;
 }
 .blog img {
     width:100%;
@@ -213,12 +216,13 @@ main .container {
     color: rgba(22, 22, 22, 0.7);
 }
 
+
 /* footer */
 .footer {
-    background:#161616;
+    background:#37003C;
 }
 .footer .container {
-    padding:80px;
+    padding:50px 0;
     text-align:center;
 }
 .footer h4 {
@@ -230,7 +234,7 @@ main .container {
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .footer ul {
-    margin-top:70px;
+    margin-top:50px;
 }
 .footer ul li{
     display:inline-block;
@@ -268,9 +272,12 @@ main .container {
     justify-content:center;
     text-align:center;
     padding:40px 20px;
+    animation:sliding-bottom .5s linear;
+    animation-delay:.2s;
 }
 .match h3 {
     margin:20px 0 10px 0;
+    
 }
 .match p {
     font-size:16px;
@@ -290,6 +297,10 @@ main .container {
     width:100%;
 }
 
+
+/* =================================
+    media quary for 1040px
+========================================= */
 @media all and (max-width:1040px){
     .blogs {
         grid-template-columns:repeat(2, 1fr);
@@ -302,6 +313,10 @@ main .container {
     }
 }
 
+
+/* =================================
+    media quary for 768px Tab View
+========================================= */
 @media (max-width:768px){
     .update-news {
         flex-flow:column !important;
@@ -337,15 +352,23 @@ main .container {
         font-size:13px;
         width:10rem;
     }
+    .footer .container {
+        padding:50px 0;
+    }
+    .footer ul {
+        margin-top:30px;
+    }
 }
+
+/* =================================
+    media quary for 767px tab View
+========================================= */
 @media (max-width:767px) {
     header .container {
         grid-template-columns:1fr;
         justify-content:center;
         align-items:center;
-    }
-    .banner-content br {
-        display:none;
+        background:linear-gradient(to top, rgba(0,0,0,0.09), #37003C);
     }
     .banner-content {
         text-align:center;
@@ -354,11 +377,37 @@ main .container {
         margin:20px;
         font-size:14px;
     }
+    .banner-image {
+        justify-content:center;
+        margin:0;
+        animation:sliding-left .8s linear;
+    }
     .banner-image img {
         width:auto;
     }
 }
+/* animation */
+@keyframes sliding-left {
+    from {
+        transform:translateX(-150%);
+    }
+    to {
+        transform:translate(0);
+    }
+}
+
+
+
+/* =================================
+    media quary for 480px mobile View
+========================================= */
 @media (max-width:480px){
+    .banner-content h1 {
+        font-size:22px;
+    }
+    .banner-image img{
+        max-width:95%;
+    }
     .short-menu {
         flex-flow:column;
     }
@@ -380,6 +429,9 @@ main .container {
     .hide-blog {
         display:block;
     }
+    .upcoming-match {
+        grid-template-columns:1fr;
+    }
     .viewall {
         display:none;
     }
@@ -389,16 +441,9 @@ main .container {
     .footer ul.social-link li {
         display:inline-block;
     }
-    .footer ul.social-link li a{
-        margin:3px;
-    }
-    .upcoming-match {
-        grid-template-columns:1fr;
-    }
-    .banner-content h1 {
-        font-size:22px;
-    }
-    .banner-image img{
-        max-width:95%;
-    }
 }
+
+
+/* =============================
+    End stylesheet
+======================================== */
